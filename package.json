@@ -1,19 +1,24 @@
 {
   "name": "styled-animate",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "compile": "babel src -d dist",
-    "prepublish": "npm run compile"
+    "prepublishOnly": "npm run compile"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/granmoe/styled-animate.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "react",
+    "styled-components",
+    "react-transition-group",
+    "animation"
+  ],
+  "author": "Matt Granmoe",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/granmoe/styled-animate/issues"
   },
