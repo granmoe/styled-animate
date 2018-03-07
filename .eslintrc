@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "prettier", "prettier/standard", "prettier/react"],
+  "plugins": ["standard", "react"],
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "rules": {
+    "react/jsx-uses-vars": "error",
+    "no-unused-vars": ["error", { "varsIgnorePattern": "_" }],
+    "react/jsx-uses-react": "error"
+  }
+}
