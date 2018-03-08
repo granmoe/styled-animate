@@ -63,14 +63,12 @@ export default (
         debug ? (
           <div>
             <AnimatedComponent __state={state} {...rest}>
-              State: {state}
               {children}
             </AnimatedComponent>
             <Debug>State: {state}</Debug>
           </div>
         ) : (
           <AnimatedComponent __state={state} {...rest}>
-            State: {state}
             {children}
           </AnimatedComponent>
         )
