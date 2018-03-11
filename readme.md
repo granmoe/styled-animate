@@ -18,7 +18,26 @@ const AnimatedFoo = withAnimate(Foo, {
 <AnimatedFoo in={this.state.showFoo} />
 ```
 
+Or, using one of the convenient helper functions:
+
+```javascript
+import withAnimate from 'styled-animate'
+
+const Foo = styled.div`
+  /* some styles here */
+`
+
+const AnimatedFoo = fadeInOut(Foo, '500ms linear')
+
+// then in a render function...
+<AnimatedFoo in={this.state.showFoo} />
+```
+
 Using the "animate" key will produce a react-transition-group <Transition> component that animates opacity from 0 to 1 on mount and from 1 to 0 on unmount, both animations lasting 500ms (parsed from the "transition" key). You may also use seconds as the unit of measure for the transition timing, like `transition: 2s ease-in`.
+
+# Test Drive in Codesandbox.io!
+
+https://codesandbox.io/s/20zqow283n
 
 # API
 
@@ -33,6 +52,11 @@ For the first three in the list above, the component will mount immediately when
 
 Note that `property` can be any CSS property, and `firstValue` and `secondValue` can be any valid values for that property.
 
+## Helper Methods
+
+TODO
+Right now I have fadeInOut, fadeIn, and fadeOut. Many more to come! And documentation that doesn't suck!
+
 # Compatible components
 
 You can use this on any component that forwards on the className prop. The [styled components docs](https://www.styled-components.com/docs/basics#styling-any-component) explanation applies here:
@@ -41,7 +65,7 @@ You can use this on any component that forwards on the className prop. The [styl
 
 # Upcoming features
 
-Allow passing an array of properties to animate, and allow passing different values for "entering" and "exiting" phases of animation:
+* Allow passing an array of properties to animate, and allow passing different values for "entering" and "exiting" phases of animation:
 
 ```javascript
 const Example = withAnimation(SomeComponent, {
@@ -55,3 +79,7 @@ const Example = withAnimation(SomeComponent, {
   ]
 }
 ```
+
+* Automatically apply the animation to all children of a component
+
+* Easily compose helper function animations together
