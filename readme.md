@@ -1,7 +1,7 @@
 # Example Usage
 
 ```javascript
-import withAnimate from 'styled-animate'
+import { withAnimate } from 'styled-animate'
 
 const Foo = styled.div`
   /* some styles here */
