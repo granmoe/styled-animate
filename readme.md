@@ -54,8 +54,53 @@ Note that `property` can be any CSS property, and `firstValue` and `secondValue`
 
 ## Helper Methods
 
-TODO
-Right now I have fadeInOut, fadeIn, and fadeOut. Many more to come! And documentation that doesn't suck!
+### Usage
+
+`const AnimatedFoo = helperMethod(Foo, '500ms linear')`
+The timing can also be passed as seconds, and the timing function ("linear" in the example above) can be any valid CSS transition timing function.
+
+### Available Helper Methods
+
+All of these are mounted and unmounted with the "in" prop (just like when using `animate`, `animateIn`, and `animateOut`).
+
+* fadeIn - fades in
+* fadeOut - fades out
+* fadeInOut - fades in and fades out
+
+## withDelay
+
+Sometimes, you need a component to coordinate the timing of when it appears/disappears in relation to the animation of another component. You can use withDelay to accomplish this.
+
+### Usage
+
+```javascript
+import Hello from './Hello'
+import withDelay from './with-delay'
+
+const DelayedHello = withDelay(Hello, '2000ms', 'both')
+
+class App extends Component {
+  state = {
+    show: false,
+  }
+
+  render() {
+    return (
+      <div
+        onClick={() => {
+          this.setState({ show: !this.state.show })
+        }}
+      >
+        <DelayedHello in={this.state.show} />
+      </div>
+    )
+  }
+}
+```
+
+As with the helper methods and the withAnimate API, a seconds (`2s`) or milliseconds (`400ms`) timing value can be passed to `withDelay`. The third parameter must be either `in`, `out`, or `both`. These are self-explanatory.
+
+Play with withDelay on [codesandbox](https://codesandbox.io/s/1qjvwy51p4)
 
 # Compatible components
 
