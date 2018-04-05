@@ -1,13 +1,13 @@
 # Example Usage
 
 ```javascript
-import withAnimate from 'styled-animate'
+import withAnimation from 'styled-animate'
 
 const Foo = styled.div`
   /* some styles here */
 `
 
-const AnimatedFoo = withAnimate(Foo, {
+const AnimatedFoo = withAnimation(Foo, {
   transition: '500ms linear',
   animate: {
     opacity: [0, 1]
