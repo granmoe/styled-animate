@@ -29,7 +29,8 @@
     "semi": false
   },
   "dependencies": {
-    "react-transition-group": "^2.5.0"
+    "react-transition-group": "^2.5.0",
+    "randomatic": ">=3.x.x"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
